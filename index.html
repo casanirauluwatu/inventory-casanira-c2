@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CASA NIRA · VILLA C2 · UPGRADED INVENTORY</title>
+<meta name="description" content="Upgraded inventory, new additions, and custom-branded items prepared for Casa Nira · Villa C2 · The Sanctuary, Uluwatu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#sections">Skip to content</a>
+
+<!-- Top bar -->
+<header class="topbar">
+  <div class="wrap">
+    <span class="mono" id="tb-brand">CASA NIRA</span>
+    <span class="mono center" id="tb-center">VILLA C2 · THE SANCTUARY</span>
+    <span class="right mono"><b id="tb-doc">UPGRADE DOC</b><span class="dim">|</span><span id="tb-year">2026</span></span>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="wrap hero">
+  <div class="eyebrow">
+    <span class="tag" id="hero-tag">VILLA C2</span>
+    <span class="sub" id="hero-sub">· THE SANCTUARY</span>
+  </div>
+  <h1>UPGRADED INVENTORY <span class="thin">BY CASA NIRA TEAM</span></h1>
+  <p class="lede">A complete overview of inventory upgrades, new additions, and custom-branded items prepared for the villa.</p>
+
+  <div class="tabs" role="tablist" aria-label="Inventory views">
+    <button class="tab mono" role="tab" data-tab="upgrade" aria-selected="true">
+      INVENTORY UPGRADE <span class="cnt" id="tab-up-cnt">0</span></button>
+    <button class="tab mono" role="tab" data-tab="custom" aria-selected="false">
+      CUSTOM BRANDING <span class="cnt" id="tab-cu-cnt">0</span></button>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="callout">
+    <span class="ic" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1" stroke-linecap="round"/></svg>
+    </span>
+    <div>
+      <p class="h">PLEASE NOTE</p>
+      <p>Slight changes on brand can still happen due to market conditions and availability of the unit. Everything will be communicated. Material, finishes, and dimensions may be slightly adjusted based on production availability.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Filter bar -->
+<div class="filters">
+  <div class="wrap">
+    <div class="frow">
+      <label class="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4" stroke-linecap="round"/></svg>
+        <input id="search" type="text" placeholder="Search items, brands, notes…" autocomplete="off" aria-label="Search inventory">
+      </label>
+      <div class="frow" id="sec-chips" role="group" aria-label="Filter by section"></div>
+    </div>
+    <div class="frow">
+      <button class="chip" data-k="upgrade" aria-pressed="false"><span class="cdot"></span>UPGRADE</button>
+      <button class="chip" data-k="new" aria-pressed="false"><span class="cdot"></span>NEW</button>
+      <button class="chip" data-k="asis" aria-pressed="false"><span class="cdot"></span>AS IS</button>
+      <span class="spacer"></span>
+      <span class="count mono" id="count"></span>
+      <button class="share mono" id="share">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M12 3l-4 4M12 3l4 4M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>
+        SHARE VIEW</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sections -->
+<main class="wrap">
+  <div id="sections"></div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="disc">
+      <div>
+        <p class="h">ON BRANDING</p>
+        <p>Slight changes on brand can still happen due to market conditions and availability of the unit. Everything will be communicated with the owner.</p>
+      </div>
+      <div>
+        <p class="h">ON MATERIALS</p>
+        <p>Material, finishes, and dimensions may be slightly adjusted based on production availability without compromising the intended quality.</p>
+      </div>
+    </div>
+    <div class="foot-meta">
+      <span id="foot-loc">THE SANCTUARY · ULUWATU</span>
+      <span id="foot-updated">LAST UPDATED · JULY 2026</span>
+      <span>CASA NIRA ULUWATU — INVENTORY SSOT</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
