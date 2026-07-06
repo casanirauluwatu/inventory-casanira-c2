@@ -1,33 +1,37 @@
 # Casa Nira · Villa C2 — Upgraded Inventory
 
-A static single-page inventory site modeled on the Villa C7 reference, with the data
-sourced from **UPGRADE SSOT - UPGRADE NEW FORMAT FF&E 3BR.pdf**.
+A single self-contained web page (`index.html`) showing the FF&E upgrade inventory and
+custom-branding catalog for **Villa C2 · The Sanctuary (3BR)**. Built on the shared Casa
+Nira inventory template; data sourced from *UPGRADE SSOT — FF&E 3BR*.
 
-## Files
-- `index.html` — page shell
-- `styles.css` — design system (Bricolage Grotesque + JetBrains Mono, warm cream palette)
-- `data.js` — the full inventory (edit here to change items / brands / notes)
-- `app.js` — rendering, filtering, search, share-view, inline line icons
+## Structure
+Everything lives in **`index.html`** — HTML, CSS, and JS in one file, no build step and no
+dependencies (fonts load from Google Fonts).
+
+Two data arrays inside the `<script>` block near the bottom:
+- **`ITEMS`** — the inventory (137 items). Each row:
+  `{ cat, name, location, status, qty, prevBrand, newBrand, note? }`
+  - `status`: `"Upgrade"` (gold ribbon, prev → new brand), `"New"` (green ribbon), or `"As Is"`.
+  - `prevBrand` / `newBrand`: string or `null`. `note`: optional string.
+  - `cat`: one of Electronics & Appliances, Fixed Furniture, Loose Furniture, Amenities, Cleaning Tools.
+- **`BRANDED`** — the shared custom-branding catalog (In-Room Amenities + Signage) with
+  material/finish/dimension specs and Google Drive asset links. Shared across villas.
 
 ## Run locally
 ```bash
 cd inventory_upgrade_c2
-python3 -m http.server 4173
-# open http://localhost:4173
+python3 -m http.server 4173      # then open http://localhost:4173
 ```
+Or just double-click `index.html`.
 
 ## Deploy to Vercel
-No build step — it's fully static.
+No build step — fully static.
 ```bash
-npx vercel        # from this folder, follow prompts
+gh repo create inventory-casanira-c2 --public --source=. --push   # push to GitHub
+npx vercel --prod                                                 # go live
 ```
-Or drag the folder onto the Vercel dashboard (or Netlify). Set no framework / output = root.
+Or import the repo at vercel.com/new (Framework: **Other**, no build command).
 
-## Editing content
-- **Villa name / owner / year / dates:** the `VILLA` object at the top of `data.js`.
-- **Items:** the `INVENTORY` array. Each item:
-  - `status`: `"upgrade"` (gold badge, old → new brand), `"new"` (green badge), or `"asis"` (no badge).
-  - `old` = current/example brand, `brand` = upgraded brand, `qty`, `note`, `loc`.
-  - `custom: true` flags an item for the **Custom Branding** tab.
-- **Sections & order:** the `SECTIONS` array.
-- Item icons auto-map from the name (`iconFor` in `app.js`); add keywords there if needed.
+## Notes
+- The source PDF and the reference template file are git-ignored (not published).
+- "Last updated" shows the current month automatically.
